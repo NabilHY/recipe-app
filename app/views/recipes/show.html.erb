@@ -11,13 +11,18 @@
         <p>Steps go here...</p>
         </div>
         <div class="col-6">
-            <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitches">
-                <label class="custom-control-label" for="customSwitches">Toggle this switch element</label>
-            </div>
+          <div class="custom-control custom-switch">
+            <% if @recipe.public? %>
+	            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+              <label class="custom-control-label" for="customSwitch1">Public</label>
+            <% else %>
+              <input type="checkbox" class="custom-control-input" id="customSwitches">
+              <label class="custom-control-label" for="customSwitches">Public</label>
+            <% end %>
+          </div>
         </div>
     </div>
-    <div class="row justify-content-between mt-4 mb-4">
+    <div class="row justify-content-around mt-4 mb-4">
         <div>
             <button type="button" class="btn btn-info">Generate shopping list</button>        
         </div>
@@ -41,7 +46,7 @@
         <tr>
           <th><%= food.name %></th>
           <td><%= food.quantity %><%= food.measurement_unit %></td>
-          <td>500$</td>
+          <td><%= food.price %>$</td>
           <td class="text-center">
             <button type="button" class="btn btn-link">Remove</button>
             <button type="button" class="btn btn-link">Modify</button>
