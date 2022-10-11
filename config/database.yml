@@ -16,7 +16,7 @@ test:
   <<: *default
   database: recipe5_test
 
-#
+
 production:
   <<: *default
   database: recipe5_production
