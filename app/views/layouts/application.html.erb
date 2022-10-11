@@ -7,9 +7,25 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "auth", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "form", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h2>Recipe App</h2>
+      <div>
+        <%=link_to 'Foods', foods_path %>
+        <%=link_to 'Recipes', recipes_path %>
+        <% if user_signed_in? %>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete  %>
+        <% else %>
+          <%= button_to "Log in", user_session_path, class:"login-btn" %><br />
+        <% end %>
+      </div>
+    </header>
+    <main>
+     <%= yield %>
+    </main>
   </body>
 </html>
