@@ -1,7 +1,14 @@
-<h1>Recipes List</h1>
-<% @recipes.each do |recipe| %>
-    <p>
-        <%= recipe.name %>
-    </p>
-<% end %>
-
+<div class = "container ">
+    <% @recipes.each do |recipe| %>
+        <div class="w-100 row border border-dark mt-2 mb-2 p-3">
+            <div class="col-sm-6">
+                <h5 class="card-title display-4">Recipe <%= recipe.id %> </h5>
+                <a href="#" class="btn btn-danger mt-4">Remove</a>
+            </div>
+            <div class="col-sm-6">
+                <h5 class="card-title">Description for the recipe</h5>
+                 <p class="card-text"><%= recipe.description %></p>
+            </div>
+        </div>
+    <% end %>
+</div>
