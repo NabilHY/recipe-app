@@ -26,5 +26,3 @@ class FoodsController < ApplicationController
     params.require(:food).permit(:user_id, :name, :measurement_unit, :quantity, :price)
   end
 end
-
-

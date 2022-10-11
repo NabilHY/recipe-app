@@ -37,7 +37,6 @@ group :development do
 end
 
 group :test do
-
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'

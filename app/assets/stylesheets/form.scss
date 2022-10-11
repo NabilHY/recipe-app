@@ -2,6 +2,18 @@ $sub-color: grey;
 $main-color: black;
 
 .food-form {
+  .actions {
+    input {
+      margin: 40px 0;
+      width: 100px;
+      height: 40px;
+      color: white;
+      background-color: rgb(18, 145, 167);
+      font-size: 20px;
+      border: none;
+      box-shadow: 0 0 5px 5px rgba(140, 137, 137, 0.612);
+    }
+  }
   .field {
     margin: 10px 0;
     input,
@@ -23,19 +35,4 @@ $main-color: black;
       }
     }
   }
-  
-  .actions {
-    input {
-      margin: 40px 0;
-      width: 100px;
-      height: 40px;
-      color: white;
-      background-color: rgb(18, 145, 167);
-      font-size: 20px;
-      border: none;
-      box-shadow: 0 0 5px 5px rgba(140, 137, 137, 0.612);
-    }
-  }
 }
-
-
