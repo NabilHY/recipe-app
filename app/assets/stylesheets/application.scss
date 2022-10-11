@@ -1,3 +1,28 @@
-h1 {
-  color:red;
+.foods-table{
+  table {
+    border: 2px solid rgb(24, 22, 22);
+    border-collapse: collapse;
+    width: 90%;
+    margin:0 auto;
+    
+  }
+        
+  th {
+    background-color: rgb(117, 109, 109);
+    font-weight: bold;
+    font-size: 0.8em;
+    padding: 5px 10px;
+    text-align: left;
+    border-left: 1px solid black;
+  }
+
+  td {
+    border-left: 1px solid black;
+    padding: 5px 10px;
+    vertical-align: top;
+  }
+
+  tr:nth-child(2n) {
+    background-color: lightgray;
+  }
 }
