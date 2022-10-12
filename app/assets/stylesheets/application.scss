@@ -1,6 +1,10 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
-
+a,
+a:hover {
+  text-decoration: none;
+  color: black
+}
 main {
   display: flex;
   align-items: center;
@@ -29,22 +33,7 @@ header {
   a,
   a:-webkit-any-link {
     color: white;
-    text-decoration: none;
     font-size: 20px;
-  }
-
-  .login-btn {
-    background-color: rgb(18, 145, 167);
-    padding: 7px 10px;
-    border-radius: 5px;
-  }
-
-  button {
-    font-size: 20px;
-    color: black;
-    background-color: rgb(247, 251, 2);
-    padding: 7px 10px;
-    border-radius: 5px;
   }
 }
 
@@ -81,12 +70,3 @@ header {
   }
 }
 
-.new-food {
-  padding: 10px 20px;
-  margin: 40px 0;
-  text-decoration: none;
-  color: white;
-  background-color: rgb(18, 145, 167);
-  font-size: 20px;
-  box-shadow: 0 0 5px 5px rgba(140, 137, 137, 0.612);
-}

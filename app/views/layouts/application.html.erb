@@ -18,9 +18,9 @@
         <%=link_to 'Foods', foods_path %>
         <%=link_to 'Recipes', recipes_path %>
         <% if user_signed_in? %>
-          <%= button_to "Logout", destroy_user_session_path, method: :delete  %>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-warning mt-"  %>
         <% else %>
-          <%= button_to "Log in", user_session_path, class:"login-btn" %><br />
+          <%= button_to "Log in", user_session_path, class:"btn btn-primary mt-" %><br />
         <% end %>
       </div>
     </header>
