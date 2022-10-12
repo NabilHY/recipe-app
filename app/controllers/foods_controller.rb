@@ -22,6 +22,16 @@ class FoodsController < ApplicationController
     end
   end
 
+  def destroy
+    @food = current_user.foods.find(params[:id])
+    @recipe_foods = @food.recipe_foods
+    @recipe_foods.each(&:destroy)
+    @food.destroy
+    respond_to do |format|
+      format.html { redirect_to foods_path, notice: 'Food was successfully destroyed.' }
+    end
+  end
+
   def food_params
     params.require(:food).permit(:user_id, :name, :measurement_unit, :quantity, :price)
   end

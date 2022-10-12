@@ -1,5 +1,12 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
+a,
+a:-webkit-any-link,
+a:hover {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
 
 main {
   display: flex;
@@ -24,27 +31,6 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 300px;
-  }
-
-  a,
-  a:-webkit-any-link {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-  }
-
-  .login-btn {
-    background-color: rgb(18, 145, 167);
-    padding: 7px 10px;
-    border-radius: 5px;
-  }
-
-  button {
-    font-size: 20px;
-    color: black;
-    background-color: rgb(247, 251, 2);
-    padding: 7px 10px;
-    border-radius: 5px;
   }
 }
 
@@ -79,14 +65,4 @@ header {
   tr:nth-child(2n) {
     background-color: lightgray;
   }
-}
-
-.new-food {
-  padding: 10px 20px;
-  margin: 40px 0;
-  text-decoration: none;
-  color: white;
-  background-color: rgb(18, 145, 167);
-  font-size: 20px;
-  box-shadow: 0 0 5px 5px rgba(140, 137, 137, 0.612);
 }
