@@ -15,8 +15,8 @@
     <header>
       <h2>Recipe App</h2>
       <div>
-        <%=link_to 'Foods', foods_path %>
-        <%=link_to 'Recipes', recipes_path %>
+        <%=link_to 'Foods', foods_path, class:"text-white" %>
+        <%=link_to 'Recipes', recipes_path, class:"text-white" %>
         <% if user_signed_in? %>
           <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-warning mt-"  %>
         <% else %>
