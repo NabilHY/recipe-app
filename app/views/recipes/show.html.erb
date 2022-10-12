@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-6">
         <p>Preparation time: <%= @recipe.preparation_time %></p>
-        <p>Cookie time: <%= @recipe.cooking_time %></p>
+        <p>Cooking time: <%= @recipe.cooking_time %></p>
         <p>Steps go here...</p>
         </div>
         <div class="col-6">
@@ -42,11 +42,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @foods.each do |food| %>
+    <% @recipe_foods.each do |recipe_food| %>
         <tr>
-          <th><%= food.name %></th>
-          <td><%= food.quantity %><%= food.measurement_unit %></td>
-          <td><%= food.price %>$</td>
+          <th><%= Food.find(recipe_food.food_id).name %></th>
+          <td><%= Food.find(recipe_food.food_id).quantity %><%= Food.find(recipe_food.food_id).measurement_unit %></td>
+          <td><%= number_to_currency(Food.find(recipe_food.food_id).price * recipe_food.quantity, :unit => "$") %></td>
           <td class="text-center">          
             <button type="button" class="btn btn-link">Remove</button>
             <button type="button" class="btn btn-link">Modify</button>

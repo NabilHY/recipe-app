@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = @recipes.all
+    @recipes = current_user.recipes
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-    @foods = Recipe_food.where(recipe_id: @recipe.id)
+    @recipe_foods = @recipe.recipe_foods
   end
 
   def new
@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
     @recipe = current_user.recipes.new(recipe_params)
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to user_recipes_path, notice: 'Recipe was successfully created.' }
+        format.html { redirect_to recipes_path, notice: 'Recipe was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -24,15 +24,18 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = Recipe.find(params[:id])
+    @recipe = current_user.recipes.find(params[:id])
+    @recipe_foods = @recipe.recipe_foods 
+    @recipe_foods.each do |recipe_food|
+      recipe_food.destroy
+    end
     @recipe.destroy
     respond_to do |format|
-      format.html { redirect_to user_recipes_path, notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to recipes_path, notice: 'Recipe was successfully destroyed.' }
     end
-    update_recipe_id
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :public)
+    params.require(:recipe).permit(:name, :description, :public, :cooking_time, :preparation_time)
   end
 end
