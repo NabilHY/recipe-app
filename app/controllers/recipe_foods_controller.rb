@@ -1,6 +1,6 @@
 class RecipeFoodsController < ApplicationController
-  def index
-  end
+  def index; end
+
   def new
     @recipe_food = RecipeFood.new
     @foods = []
@@ -12,7 +12,11 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe = current_user.recipes.find(params[:recipe_id])
     @foods = Food.all
-    @recipe_food = @recipe.recipe_foods.new(recipe: @recipe, food_id: recipe_food_params[:food_id], quantity: recipe_food_params[:quantity])
+    @recipe_food = @recipe.recipe_foods.new(
+      recipe: @recipe, food_id:
+      recipe_food_params[:food_id],
+      quantity: recipe_food_params[:quantity]
+    )
     respond_to do |format|
       if @recipe_food.save
         format.html { redirect_to recipe_path(@recipe.id), notice: 'ingridiant was successfully created.' }

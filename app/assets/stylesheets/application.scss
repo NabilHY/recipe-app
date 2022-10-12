@@ -1,10 +1,13 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
 a,
+a:-webkit-any-link,
 a:hover {
+  color: white;
+  font-size: 20px;
   text-decoration: none;
-  color: black
 }
+
 main {
   display: flex;
   align-items: center;
@@ -30,11 +33,6 @@ header {
     width: 300px;
   }
 
-  a,
-  a:-webkit-any-link {
-    color: white;
-    font-size: 20px;
-  }
 }
 
 .foods-list {
@@ -69,4 +67,3 @@ header {
     background-color: lightgray;
   }
 }
-
