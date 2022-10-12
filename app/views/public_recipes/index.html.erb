@@ -1,0 +1,15 @@
+<h1>Public-Recipes</h1>
+<div class = "container ">
+    <% @public_recipes.each_with_index do |recipe, index| %>
+        <div class="w-100 row border border-dark mt-2 mb-2 p-3">
+            <div class="col-sm-6">
+                <h5 class="card-title display-4"><%= recipe.name %> </h5>
+                <h6>By: <%= recipe.user.name %></h6>
+            </div>
+            <div class="col-sm-6">
+                <h5 class="card-title">Total food items: <%= recipe.recipe_foods.count %></h5>
+                 <p class="card-text">Total price: <%= @prices[index] %></p>
+            </div>
+        </div>
+    <% end %>
+</div>
