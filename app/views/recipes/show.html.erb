@@ -48,7 +48,7 @@
           <td><%= recipe_food.quantity %><%= Food.find(recipe_food.food_id).measurement_unit %></td>
           <td><%= number_to_currency(Food.find(recipe_food.food_id).price * recipe_food.quantity, :unit => "$") %></td>
           <td class="text-center">          
-            <button type="button" class="btn btn-link">Remove</button>
+            <%= button_to "Delete", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class:"btn btn-link" %>
             <button type="button" class="btn btn-link">Modify</button>
           </td>
         </tr>

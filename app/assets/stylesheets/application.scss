@@ -16,13 +16,13 @@ main {
 
 header {
   background-color: black;
-  height: 60px;
+  height: 70px;
   width: 100%;
   margin-bottom: 100px;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
   box-sizing: border-box;
   padding: 0 10px;
 
@@ -65,4 +65,11 @@ header {
   tr:nth-child(2n) {
     background-color: lightgray;
   }
+}
+
+.recipes-list {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }

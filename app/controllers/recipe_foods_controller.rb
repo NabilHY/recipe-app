@@ -13,8 +13,8 @@ class RecipeFoodsController < ApplicationController
     @recipe = current_user.recipes.find(params[:recipe_id])
     @foods = Food.all
     @recipe_food = @recipe.recipe_foods.new(
-      recipe: @recipe, food_id:
-      recipe_food_params[:food_id],
+      recipe: @recipe,
+      food_id: recipe_food_params[:food_id],
       quantity: recipe_food_params[:quantity]
     )
     respond_to do |format|
@@ -26,11 +26,16 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
-  def recipe_food_params
-    params.require(:recipe_food).permit(:recipe_id, :food_id, :quantity)
+  def destroy
+    @recipe = current_user.recipes.find(params[:recipe_id])
+    @recipe_food = @recipe.recipe_foods.find(params[:id])
+    @recipe_food.destroy
+    respond_to do |format|
+      format.html { redirect_to recipe_path(params[:recipe_id]), notice: 'Recipe was successfully destroyed.' }
+    end
   end
 
-  def food_params
-    params.require(:food).permit(:user_id, :name, :measurement_unit, :quantity, :price)
+  def recipe_food_params
+    params.require(:recipe_food).permit(:recipe_id, :food_id, :quantity)
   end
 end

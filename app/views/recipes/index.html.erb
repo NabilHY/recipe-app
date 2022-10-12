@@ -1,22 +1,25 @@
-<div class = "container ">
-  <% @recipes.each do |recipe| %>
-    <%= link_to recipe_path(recipe.id), id: "#{recipe.id}" do %>
-      <div class="w-100 row border border-dark mt-2 mb-2 p-3">
-        <div class="col-sm-6">
-            <h5 class="card-title display-4">Recipe <%= recipe.id %> </h5>
+<div class = "recipes-list">
+  <%=link_to 'New Recipes', new_recipe_path, class:"btn btn-primary mt-4" %>
+  <div class="container-fluid w-100">
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe_path(recipe.id), id: "#{recipe.id}" do %>
+        <div class="w-100 row border border-dark my-2 p-3">
+          <div class="col-sm-6">
+            <h5 class="card-title display-4"><%= recipe.name %> </h5>
             <%= button_to "Delete", 
             {
               :controller => 'recipes', 
               :action => 'destroy', 
               :id => recipe.id
             },
-          method: :delete, class:"btn btn-danger mt-4" %>
+          method: :delete, class:"btn btn-danger my-4" %>
         </div>
         <div class="col-sm-6">
-            <h5 class="card-title">Description for the recipe</h5>
+            <h5 class="card-title"><%= recipe.description %></h5>
               <p class="card-text"><%= recipe.description %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
