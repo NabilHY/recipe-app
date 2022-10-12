@@ -5,4 +5,12 @@ class Recipe < ApplicationRecord
   def public?
     return true if public
   end
+
+  def sum
+    s = 0
+    recipe_foods.each do |recipe_food|
+      s += recipe_food.value
+    end
+    s
+  end
 end
