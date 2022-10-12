@@ -1,0 +1,57 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <h1>Recipe <%= @recipe.id %></h1>
+  </div>
+</div>
+<div class="container mt-4 border-bottom border-dark">
+    <div class="row">
+        <div class="col-6">
+        <p>Preparation time: <%= @recipe.preparation_time %></p>
+        <p>Cookie time: <%= @recipe.cooking_time %></p>
+        <p>Steps go here...</p>
+        </div>
+        <div class="col-6">
+          <div class="custom-control custom-switch">
+            <% if @recipe.public? %>
+	            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+              <label class="custom-control-label" for="customSwitch1">Public</label>
+            <% else %>
+              <input type="checkbox" class="custom-control-input" id="customSwitches">
+              <label class="custom-control-label" for="customSwitches">Public</label>
+            <% end %>
+          </div>
+        </div>
+    </div>
+    <div class="row justify-content-around mt-4 mb-4">
+        <div>
+            <button type="button" class="btn btn-info">Generate shopping list</button>        
+        </div>
+        <div>
+            <button type="button" class="btn btn-info">Add ingredient</button>
+        </div>
+    </div>
+</div>
+
+<table class="container table table-striped table-bordered mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Value</th>
+      <th class="text-center" scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+        <tr>
+          <th><%= food.name %></th>
+          <td><%= food.quantity %><%= food.measurement_unit %></td>
+          <td><%= food.price %>$</td>
+          <td class="text-center">          
+            <button type="button" class="btn btn-link">Remove</button>
+            <button type="button" class="btn btn-link">Modify</button>
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
