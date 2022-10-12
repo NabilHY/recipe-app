@@ -27,7 +27,7 @@
             <button type="button" class="btn btn-info">Generate shopping list</button>        
         </div>
         <div>
-            <button type="button" class="btn btn-info">Add ingredient</button>
+          <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id), class:"btn btn-primary mt-" %><br />
         </div>
     </div>
 </div>
@@ -45,7 +45,7 @@
     <% @recipe_foods.each do |recipe_food| %>
         <tr>
           <th><%= Food.find(recipe_food.food_id).name %></th>
-          <td><%= Food.find(recipe_food.food_id).quantity %><%= Food.find(recipe_food.food_id).measurement_unit %></td>
+          <td><%= recipe_food.quantity %><%= Food.find(recipe_food.food_id).measurement_unit %></td>
           <td><%= number_to_currency(Food.find(recipe_food.food_id).price * recipe_food.quantity, :unit => "$") %></td>
           <td class="text-center">          
             <button type="button" class="btn btn-link">Remove</button>
