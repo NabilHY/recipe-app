@@ -1,0 +1,41 @@
+$sub-color: grey;
+$main-color: black;
+
+.new_user {
+  margin: 45px 0;
+  width: 70%;
+
+  .actions {
+    input {
+      margin: 40px 0;
+      width: 100px;
+      height: 40px;
+      color: white;
+      background-color: rgb(18, 145, 167);
+      font-size: 20px;
+      border: none;
+      box-shadow: 0 0 5px 5px rgba(140, 137, 137, 0.612);
+    }
+  }
+
+  .field {
+    margin: 10px 0;
+
+    input {
+      background: none;
+      background-color: rgb(215, 243, 249);
+      color: $sub-color;
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid $sub-color;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
