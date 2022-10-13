@@ -21,6 +21,8 @@ gem 'stimulus-rails'
 
 gem 'jbuilder'
 
+gem 'rspec-rails'
+
 gem 'tzinfo-data'
 
 gem 'bootsnap', require: false
