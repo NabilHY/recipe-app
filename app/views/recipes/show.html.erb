@@ -22,14 +22,16 @@
           </div>
         </div>
     </div>
-    <div class="row justify-content-around mt-4 mb-4">
-        <div>
-            <button type="button" class="btn btn-info">Generate shopping list</button>        
+      <% if can? :manage, @recipe %>
+        <div class="row justify-content-around mt-4 mb-4">
+            <div>
+                <button type="button" class="btn btn-info">Generate shopping list</button>        
+            </div>
+            <div>
+              <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id), class:"btn btn-primary mt-" %><br />
+            </div>
         </div>
-        <div>
-          <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id), class:"btn btn-primary mt-" %><br />
-        </div>
-    </div>
+      <% end %>
 </div>
 
 <table class="container table table-striped table-bordered mt-4">
@@ -38,7 +40,9 @@
       <th scope="col">Food</th>
       <th scope="col">Quantity</th>
       <th scope="col">Value</th>
-      <th class="text-center" scope="col">Actions</th>
+      <% if can? :manage, @recipe %>
+        <th class="text-center" scope="col">Actions</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -47,10 +51,12 @@
           <th><%= Food.find(recipe_food.food_id).name %></th>
           <td><%= recipe_food.quantity %><%= Food.find(recipe_food.food_id).measurement_unit %></td>
           <td><%= number_to_currency(Food.find(recipe_food.food_id).price * recipe_food.quantity, :unit => "$") %></td>
-          <td class="text-center">          
-            <%= button_to "Delete", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class:"btn btn-link" %>
-            <button type="button" class="btn btn-link">Modify</button>
-          </td>
+          <% if can? :manage, @recipe %>       
+            <td class="text-center">   
+                <%= button_to "Delete", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class:"btn btn-link" %>
+                <button type="button" class="btn btn-link">Modify</button>
+            </td>
+          <% end %>
         </tr>
     <% end %>
   </tbody>

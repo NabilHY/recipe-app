@@ -1,12 +1,14 @@
 <div class='foods-list'>
-  <%= link_to "Add Food", new_food_path, class:"btn btn-primary mt-" %><br />
+  <%= link_to "Add Food", new_food_path, class:"btn btn-primary" %><br />
   <table>
     <thead>
       <tr>
         <th>Food</th>
         <th>Measurement unit</th>
         <th>Unit price</th>
-        <th>Actions</th>
+        <% if can? :manage, @food %>
+          <th>Actions</th>
+        <% end %>
       </tr>
     </thead>
     <tbody>
