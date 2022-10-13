@@ -1,6 +1,6 @@
 <div class="container mt-3">
   <div class="row justify-content-center">
-    <h1>Recipe <%= @recipe.id %></h1>
+    <h1><%= @recipe.name %></h1>
   </div>
 </div>
 <div class="container mt-4 border-bottom border-dark">
@@ -23,12 +23,15 @@
         </div>
     </div>
     <div class="row justify-content-around mt-4 mb-4">
-        <div>
-            <button type="button" class="btn btn-info">Generate shopping list</button>        
-        </div>
-        <div>
-          <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id), class:"btn btn-primary mt-" %><br />
-        </div>
+      <div>
+        <%= form_with model: @recipe, url: general_shopping_list_index_path, method: :get, local: true, scope: :recipe, class: "d-flex" do |f| %>
+          <%= f.text_area :id, value: @recipe.id, class: "d-none" %>
+          <%= f.submit "Generate shopping list", class: "btn btn-warning p-2 shop-btn" %>
+        <% end %>  
+      </div>
+      <div>
+        <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id), model: @recipe, class:"btn btn-info" %><br />
+      </div>
     </div>
 </div>
 
@@ -46,7 +49,7 @@
         <tr>
           <th><%= Food.find(recipe_food.food_id).name %></th>
           <td><%= recipe_food.quantity %><%= Food.find(recipe_food.food_id).measurement_unit %></td>
-          <td><%= number_to_currency(Food.find(recipe_food.food_id).price * recipe_food.quantity, :unit => "$") %></td>
+          <td><%= number_to_currency(recipe_food.value, :unit => "$") %></td>
           <td class="text-center">          
             <%= button_to "Delete", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class:"btn btn-link" %>
             <button type="button" class="btn btn-link">Modify</button>
@@ -55,3 +58,4 @@
     <% end %>
   </tbody>
 </table>
+

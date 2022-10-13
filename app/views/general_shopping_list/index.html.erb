@@ -1,0 +1,24 @@
+<h2 class="text-primary">Shopping list</h2>
+<div class="d-flex justify-content-between w-75 mt-5 text-warning" >
+  <h3>Amount of food to buy: <%= @shopping_list.size %> </h3>
+  <h3>Total value of food needed: <%= number_to_currency(@sum, :unit => "$") %></h3>
+</div>
+  <table class="container table table-striped table-bordered mt-4">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shopping_list.each do |item| %>
+          <tr>
+            <th><%= Food.find(item.food_id).name %></th>
+            <td><%= item.quantity %></td>
+            <td><%= item.value %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
