@@ -22,19 +22,20 @@
         </div>
       </div>
   </div>
-    <% if can? :manage, @recipe %>
       <div class="row justify-content-around mt-4 mb-4">
         <div>
-          <%= form_with model: @recipe, url: general_shopping_list_index_path, method: :get, local: true, scope: :recipe, class: "d-flex" do |f| %>
-            <%= f.text_area :id, value: @recipe.id, class: "d-none" %>
-            <%= f.submit "Generate shopping list", class: "btn btn-warning p-2 shop-btn" %>
-          <% end %>  
+            <%= form_with model: @recipe, url: general_shopping_list_index_path, method: :get, local: true, scope: :recipe, class: "d-flex" do |f| %>
+              <%= f.text_area :id, value: @recipe.id, class: "d-none" %>
+              <%= f.submit "Generate shopping list", class: "btn btn-warning p-2 shop-btn" %>
+            <% end %>
         </div>
-        <div>
-          <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id), model: @recipe, class:"btn btn-info" %><br />
-        </div>
+        <% if can? :manage, @recipe %>
+          <div>
+            <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id), model: @recipe, class:"btn btn-info" %><br />
+          </div>
+        <% end %>  
+
       </div>
-    <% end %>
   </div>
 
 <table class="container table table-striped table-bordered mt-4">
