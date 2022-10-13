@@ -2,11 +2,14 @@
   <td><%=food.name %></td>
   <td><%=food.measurement_unit %></td>
   <td><%=number_to_currency(food.price, :unit => "$") %></td>
-  <td><%= button_to "Delete", 
-      {
-        :controller => 'foods', 
-        :action => 'destroy', 
-        :id => food.id
-      },
-    method: :delete, class:"btn btn-danger mt-" %></td>
+  <% if can? :manage, @food %>
+    <td><%= button_to "Delete", 
+        {
+          :controller => 'foods', 
+          :action => 'destroy', 
+          :id => food.id
+        },
+      method: :delete, class:"btn btn-danger mt-" %>
+    </td>
+  <% end %>
 </tr>
