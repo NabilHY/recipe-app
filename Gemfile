@@ -23,8 +23,11 @@ gem 'jbuilder'
 
 gem 'rspec-rails'
 
+<<<<<<< HEAD
 gem 'ffi'
 
+=======
+>>>>>>> 7ce810045091ea3f11a44cd0590b0c2d40a254a4
 gem 'tzinfo-data'
 
 gem 'bootsnap', require: false

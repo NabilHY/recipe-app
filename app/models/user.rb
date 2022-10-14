@@ -15,5 +15,4 @@ class User < ApplicationRecord
   def admin?
     role
   end
-
 end
