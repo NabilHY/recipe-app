@@ -1,44 +1,36 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+#Recipe App
 
-# Project Name
-
-> Description the project.
-
+- The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Rails, Ruby, PostgreSQL, Bootstap, SCSS, Devise, Cancancan
 
-## Live Demo (if available)
+### Download it as a ZIP file
 
-[Live Demo Link](https://livedemo.com)
+or
 
+### Clone it in your local machine using GIT
 
-## Getting Started
+to get a local copy , clone the repository using git clone
+git@github.com:NabilHY/recipe-app.git
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+After you clone it run the following commands
 
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- cd recipe-app
+- bundle install
+- bin/rails db:drop db:create db:migrate
+- bin/rails server
 
 ## Authors
+
+👤 **Sanja Mandic**
+
+I am an aspiring web developer from Serbia.
+
+- GitHub: [@sanjaGit](https://github.com/Sanja969)
+- Twitter: [@sanjaTwit](https://twitter.com/SanjaMandic42)
+- LinkedIn: [@sanjaIn](https://linkedin.com/in/sanja-mandic-823995a2/)
 
 👤 **NabilHY**
 
@@ -46,23 +38,16 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@NeoNabil12](https://twitter.com/NeoNabil2)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/nabil-hayoun/)
 
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/NabilHY/recipe-app/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](https://github.com/NabilHY/recipe-app/blob/dev/MIT.md) licensed.

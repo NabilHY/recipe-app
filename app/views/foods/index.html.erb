@@ -1,0 +1,20 @@
+<div class='foods-list'>
+  <%= link_to "Add Food", new_food_path, class:"btn btn-primary" %><br />
+  <table class="container table table-striped table-bordered mt-4">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Measurement unit</th>
+        <th>Unit price</th>
+        <% if can? :manage, @food %>
+          <th>Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <%= render food %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

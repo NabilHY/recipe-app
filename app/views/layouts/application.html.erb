@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RecipeApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "auth", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "form", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+  <header>
+        <nav class="container-fluid navbar navbar-expand-md navbar-dark fixed-top p-3 text-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="">
+           <%=link_to 'Recipe App', root_path, class:"nav-link text-white" %>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-end justify-content-end text-center" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <%=link_to 'Foods', foods_path, class:"nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%=link_to 'Recipes', recipes_path, class:"nav-link" %>
+              </li>
+              <li class="nav-item mr-3">
+                <%=link_to 'Public_Recipes', public_recipes_path, class:"nav-link" %>
+              </li>
+              <li>
+                <% if user_signed_in? %>
+                  <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-warning mt-"  %>
+                <% else %>
+                  <%= button_to "Log in", user_session_path, class:"btn btn-primary mt-" %><br />
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      </header>
+   
+    <main>
+     <%= yield %>
+    </main>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,19 @@
+<div class="border border-info p-5">
+<h2 style="text-align: center" class="text-info text-left ">New ingridiant</h2>
+  <%= form_with model: @recipe_food, url: recipe_recipe_foods_path, method: :post, local: true, scope: :recipe_food do |f| %>
+    <div class="field">
+      <%= f.label :'Choose food from list:', style: "display: block" %>
+      <%= f.select :food_id, options_for_select(@foods), {}, class:"form-select form-select-lg mb-3 px-4 py-2 bg-info text-white" %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :Quantity, style: "display: block", required: true %>
+      <%= f.number_field :quantity %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Create' %>
+    </div>
+  <% end %>
+</div>
