@@ -21,16 +21,24 @@ gem 'stimulus-rails'
 
 gem 'jbuilder'
 
+gem 'rspec-rails'
+
+gem 'ffi'
+
 gem 'tzinfo-data'
 
 gem 'bootsnap', require: false
 
 gem 'devise'
 
+gem 'rails-controller-testing'
+
 gem 'sass-rails'
 
 group :development, :test do
+  gem 'capybara'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'webdrivers'
 end
 
 group :development do
@@ -39,7 +47,5 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
