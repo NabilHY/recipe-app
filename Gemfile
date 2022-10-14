@@ -27,6 +27,8 @@ gem 'bootsnap', require: false
 
 gem 'devise'
 
+gem 'rspec-rails'
+
 gem 'sass-rails'
 
 group :development, :test do
