@@ -12,13 +12,8 @@
       </div>
       <div class="col-6">
         <div class="custom-control custom-switch">
-          <% if @recipe.public? %>
-            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
-            <label class="custom-control-label" for="customSwitch1">Public</label>
-          <% else %>
-            <input type="checkbox" class="custom-control-input" id="customSwitches">
-            <label class="custom-control-label" for="customSwitches">Public</label>
-          <% end %>
+          <input type="checkbox" class="custom-control-input" id="customSwitch1" <% if @recipe.public %> checked <% end %>>
+          <label class="custom-control-label" for="customSwitch1">Public</label>
         </div>
       </div>
   </div>
@@ -66,4 +61,3 @@
     <% end %>
   </tbody>
 </table>
-

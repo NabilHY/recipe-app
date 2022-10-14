@@ -1,24 +1,53 @@
-# README
+#Recipe App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Rails, Ruby, PostgreSQL, Bootstap, 
 
-* System dependencies
+### Download it as a ZIP file
 
-* Configuration
+or
 
-* Database creation
+### Clone it in your local machine using GIT
 
-* Database initialization
+to get a local copy , clone the repository using git clone
+git@github.com:NabilHY/recipe-app.git
 
-* How to run the test suite
+After you clone it run the following commands
 
-* Services (job queues, cache servers, search engines, etc.)
+- cd recipe-app
+- bundle install
+- bin/rails db:drop db:create db:migrate
+- bin/rails server
 
-* Deployment instructions
+## Authors
 
-* ...
+👤 **Sanja Mandic**
+
+I am an aspiring web developer from Serbia.
+
+- GitHub: [@sanjaGit](https://github.com/Sanja969)
+- Twitter: [@sanjaTwit](https://twitter.com/SanjaMandic42)
+- LinkedIn: [@sanjaIn](https://linkedin.com/in/sanja-mandic-823995a2/)
+
+👤 **NabilHY**
+
+- GitHub: [@NabilHY](https://github.com/NabilHY)
+- Twitter: [@NeoNabil12](https://twitter.com/NeoNabil2)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nabil-hayoun/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/NabilHY/recipe-app/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](https://github.com/NabilHY/recipe-app/blob/dev/MIT.md) licensed.
