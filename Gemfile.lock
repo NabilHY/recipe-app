@@ -280,10 +280,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
-<<<<<<< HEAD
   rails-controller-testing
-=======
->>>>>>> 7ce810045091ea3f11a44cd0590b0c2d40a254a4
   rspec-rails
   sass-rails
   selenium-webdriver
