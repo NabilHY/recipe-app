@@ -4,7 +4,7 @@
 
 ## Built With
 
-- Rails, Ruby, PostgreSQL, Bootstap, 
+- Rails, Ruby, PostgreSQL, Bootstap, SCSS, Devise, Cancancan
 
 ### Download it as a ZIP file
 
