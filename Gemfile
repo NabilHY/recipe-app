@@ -29,6 +29,8 @@ gem 'devise'
 
 gem 'rspec-rails'
 
+gem 'ffi'
+
 gem 'sass-rails'
 
 group :development, :test do
