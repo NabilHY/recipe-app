@@ -97,8 +97,6 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.11.0)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
     ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.0.0)
@@ -272,7 +270,6 @@ DEPENDENCIES
   capybara
   debug
   devise
-  factory_girl
   ffi
   importmap-rails
   jbuilder
